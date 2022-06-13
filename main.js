@@ -2,7 +2,7 @@ const username = document.querySelector('#username');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const phone = document.querySelector('#phone');
-
+const submit = document.querySelector('#submit');
 
 //!===> the 'input' eventListener allows us to see the input of a field right away 
 //! it means like a live version of the field
@@ -55,7 +55,7 @@ password.addEventListener('input', () => {
 
 
 phone.addEventListener('input', () => {
-    let pattern = /\d{8}/g
+    let pattern = /\b[0-9]{8}\b/g
     //!=> this means that the phone number should contain 8 digits exactly
     if (pattern.test(phone.value)) {
         phone.classList.remove('invalid');
@@ -64,5 +64,15 @@ phone.addEventListener('input', () => {
     else {
         phone.classList.remove('valid');
         phone.classList.add('invalid');
+    }
+})
+
+
+submit.addEventListener('click', () => {
+    if (!(username.classList.contains('valid')
+        && email.classList.contains('valid')
+        && password.classList.contains('valid')
+        && phone.classList.contains('valid'))) {
+        alert('Not valid !')
     }
 })
