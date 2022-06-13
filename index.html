@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>form validation</title>
+</head>
+
+<body>
+    <h1>Form Validation</h1>
+    <form action="#">
+        <div>
+            <label for="username">
+                Username:
+            </label>
+            <input type="text" name="username" id="username" required>
+            <p>username must not start with digits or contain special characters.</p>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <p>email must be a valid email address , e.g : example@ex.com.</p>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            <p>Password must contain capital and special characters and minimum of 12 characters.</p>
+
+        </div>
+        <div>
+            <label for="phone">
+                Phone number:
+            </label>
+            <input type="tel" name="phone" id="phone" required>
+            <p>phone number must be a valid number of 8 digits.</p>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+    <script src="main.js"></script>
+</body>
+
+</html>

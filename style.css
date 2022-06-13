@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300;400;500&display=swap");
+/* this is to import a font family from the internet from this link => https://fonts.google.com/ */
+
+/* !==> be sure you always write this in the beginning of your css code */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; /* the body will take 100% of the height of the page*/
+}
+
+h1 {
+  text-align: center;
+  padding: 1rem;
+}
+form {
+  /* !=> this is a new css feature , it means the form will take the minimum 
+    between 70% or 25rem (rem = 16px) */
+  width: min(70%, 25rem);
+}
+
+/* when we write form > div it means the direct child of
+the form tag => like this 
+<form>
+    <div> ==> this is a dirct child
+        <div> --> this is not a direct child
+        
+    ...
+
+*/
+
+form > div {
+  margin-bottom: 1.5rem;
+}
+form > div > label {
+  display: block;
+  padding-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border: solid 1px grey;
+  border-radius: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  transition: 0.5s;
+}
+input.valid {
+  border-width: 2px;
+  border-color: green;
+  outline: green;
+}
+input.invalid {
+  border-width: 2px;
+  border-color: red !important;
+  outline: red !important;
+}
+
+form > div p {
+  color: grey;
+  font-size: 0.8rem;
+  text-align: center;
+}
+input[type="submit"] {
+  width: 50%;
+  align-self: start;
+  background-color: #2e2e2e;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+input[type="submit"]:hover {
+  background-color: #505050;
+}
